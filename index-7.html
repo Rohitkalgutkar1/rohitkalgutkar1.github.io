@@ -1,0 +1,1464 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>Rohit Kalgutkar · Design Engineer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Rohit Kalgutkar, design engineer for vehicle wiring harnesses at Yazaki India. Based in Bhiwadi, Rajasthan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a hero with a drawn wiring-harness sketch, then a sticky tab strip above five panels: About, Experience, Skills, Education, Contact. */
+:root{
+  --font-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --font-body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+
+  --bg:#EDF2F5; --bg-2:#E2EAF0; --surface:#FFFFFF;
+  --ink:#0B1D29; --ink-2:#22394A; --muted:#4A6070; --line:#CFDAE2;
+  --accent:#0A7C78; --accent-ink:#075E5B; --on-accent:#FFFFFF;
+  --amber:#E39B0B; --amber-ink:#8A5700;
+  --grid:rgba(11,29,41,.09);
+  --shadow:0 1px 2px rgba(11,29,41,.06),0 14px 34px -16px rgba(11,29,41,.22);
+
+  --w-red:#D9453F; --w-green:#2A9D5C; --w-blue:#2D6BDC; --w-yellow:#EDB10C; --w-brown:#8B5A3C;
+  --stripe-a:#FFFFFF; --stripe-b:#0B1D29;
+  --tape:#1D3342; --tube:#2A4A5E; --tape-hi:rgba(255,255,255,.16); --pulse:#FFFFFF; --metal:#C3CDD4; --w-black:#16222C;
+
+  --sun-d:none; --moon-d:block;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#071219; --bg-2:#0B1A24; --surface:#0E202C;
+    --ink:#E7F1F4; --ink-2:#C9DAE1; --muted:#9BB2BE; --line:#1F3745;
+    --accent:#3FD0C3; --accent-ink:#62E2D6; --on-accent:#04201E;
+    --amber:#F2B53F; --amber-ink:#F6C45F;
+    --grid:rgba(231,241,244,.08);
+    --shadow:0 0 0 1px rgba(255,255,255,.02),0 18px 40px -18px rgba(0,0,0,.7);
+    --w-red:#F0645D; --w-green:#3CC17A; --w-blue:#5B93F5; --w-yellow:#F5C53A; --w-brown:#B98462;
+    --stripe-a:#E7F1F4; --stripe-b:#071219;
+    --tape:#24475C; --tube:#2F5F78; --tape-hi:rgba(255,255,255,.12); --pulse:#FFFFFF; --metal:#7F97A5; --w-black:#03070B;
+    --sun-d:block; --moon-d:none;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#071219; --bg-2:#0B1A24; --surface:#0E202C;
+  --ink:#E7F1F4; --ink-2:#C9DAE1; --muted:#9BB2BE; --line:#1F3745;
+  --accent:#3FD0C3; --accent-ink:#62E2D6; --on-accent:#04201E;
+  --amber:#F2B53F; --amber-ink:#F6C45F;
+  --grid:rgba(231,241,244,.08);
+  --shadow:0 0 0 1px rgba(255,255,255,.02),0 18px 40px -18px rgba(0,0,0,.7);
+  --w-red:#F0645D; --w-green:#3CC17A; --w-blue:#5B93F5; --w-yellow:#F5C53A; --w-brown:#B98462;
+  --stripe-a:#E7F1F4; --stripe-b:#071219;
+  --tape:#24475C; --tube:#2F5F78; --tape-hi:rgba(255,255,255,.12); --pulse:#FFFFFF; --metal:#7F97A5; --w-black:#03070B;
+  --sun-d:block; --moon-d:none;
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font:400 1rem/1.65 var(--font-body);-webkit-font-smoothing:antialiased;
+  transition:background-color .35s ease,color .35s ease;
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+a{color:var(--accent-ink);text-decoration-thickness:1px;text-underline-offset:3px}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+.wrap{
+  width:100%;max-width:1160px;margin-inline:auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+
+/* ---------- Shared type ---------- */
+.eyebrow{font:500 .75rem/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+.h2{font:700 clamp(1.9rem,4.2vw,3rem)/1.08 var(--font-display);letter-spacing:-.02em;text-wrap:balance;margin:16px 0 22px}
+.h3{font:700 1.5rem/1.2 var(--font-display);letter-spacing:-.01em}
+
+/* ---------- Motion ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
+@keyframes grow{from{transform:scaleY(0)}}
+@keyframes draw{from{stroke-dashoffset:1}}
+@keyframes fade{from{opacity:0}}
+@keyframes flow{to{stroke-dashoffset:-1}}
+@keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--amber) 55%,transparent)}100%{box-shadow:0 0 0 10px transparent}}
+.rise{animation:rise .65s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0)*80ms)}
+[data-stagger]>*{animation:rise .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--base,0ms) + var(--i,0)*var(--step,60ms))}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(var(--grid) 1.3px,transparent 1.5px);background-size:24px 24px;
+  -webkit-mask-image:linear-gradient(to bottom,#000 30%,transparent 95%);
+  mask-image:linear-gradient(to bottom,#000 30%,transparent 95%);
+}
+.hero .wrap{position:relative}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding-block:18px}
+.mark{
+  display:grid;place-items:center;width:42px;height:42px;border-radius:12px;
+  background:var(--ink);color:var(--bg);font:700 1rem/1 var(--font-display);letter-spacing:.02em;
+}
+.theme{
+  display:grid;place-items:center;width:42px;height:42px;border-radius:12px;
+  border:1px solid var(--line);background:var(--surface);color:var(--ink);
+  transition:transform .3s,border-color .3s;
+}
+.theme:hover{transform:rotate(14deg);border-color:var(--accent)}
+.theme svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.theme .i-sun{display:var(--sun-d)}
+.theme .i-moon{display:var(--moon-d)}
+
+.hero-grid{
+  display:grid;gap:40px;align-items:center;
+  grid-template-columns:minmax(0,1fr);
+  padding-block:clamp(20px,5vw,48px) clamp(44px,7vw,80px);
+}
+.hero-copy{min-width:0}
+.kicker{display:inline-flex;align-items:center;gap:10px}
+.kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);animation:ping 2.4s ease-out infinite}
+.name{font:700 clamp(3.1rem,11vw,6.4rem)/.92 var(--font-display);letter-spacing:-.035em;margin:22px 0 24px}
+.name .line{display:block}
+.lede{font-size:clamp(1.1rem,2.2vw,1.3rem);line-height:1.5;color:var(--ink-2);max-width:32ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:13px 22px;border-radius:12px;border:1px solid transparent;
+  font:600 .98rem/1.2 var(--font-body);text-decoration:none;cursor:pointer;
+  transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,background-color .3s,border-color .3s;
+}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
+.btn:hover svg{transform:translateX(4px)}
+.btn.primary{background:var(--accent);color:var(--on-accent)}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 12px 24px -10px color-mix(in srgb,var(--accent) 70%,transparent)}
+.btn.ghost{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{transform:translateY(-2px);border-color:var(--accent)}
+
+.schematic{
+  min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:22px;
+  padding:clamp(14px,2.4vw,24px);box-shadow:var(--shadow);
+}
+.harness{display:block;width:100%;height:auto}
+.harness .wire{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;animation:draw 1.5s cubic-bezier(.4,0,.2,1) both;animation-delay:calc(.35s + var(--k)*.12s)}
+.harness .tracer{fill:none;stroke-width:1.7;stroke-linecap:round;animation:fade .6s ease both;animation-delay:1.9s}
+.harness .pulse{fill:none;stroke:var(--pulse);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:.05 .95;opacity:.95;animation:flow 3.4s linear infinite;animation-delay:calc(2.2s + var(--k)*.5s)}
+.harness .tape{animation:fade .7s ease both;animation-delay:1.2s}
+.harness .conn{animation:fade .6s ease both}
+.harness .body{fill:var(--bg-2);stroke:var(--ink);stroke-width:2}
+.harness .hole{fill:var(--bg);stroke:var(--muted);stroke-width:1.5}
+.harness text{font:500 15px var(--font-mono);letter-spacing:.1em;fill:var(--muted)}
+.schematic figcaption{margin-top:12px;font:400 .72rem/1.4 var(--font-mono);letter-spacing:.06em;color:var(--muted)}
+
+/* ---------- Tabs ---------- */
+.tabbar{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:20;
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.scroller{overflow-x:auto;scrollbar-width:none}
+.scroller::-webkit-scrollbar{display:none}
+.tablist{position:relative;display:flex;gap:4px;min-width:max-content}
+.tab{padding:18px 16px 17px;white-space:nowrap;font:600 .95rem/1 var(--font-body);color:var(--muted);transition:color .25s}
+.tab:hover,.tab[aria-selected="true"]{color:var(--ink)}
+.ind{
+  position:absolute;left:0;bottom:0;height:4px;width:0;border-radius:4px 4px 0 0;
+  background:repeating-linear-gradient(90deg,var(--accent) 0 12px,var(--amber) 12px 16px);
+  transition:transform .5s cubic-bezier(.3,.8,.2,1),width .5s cubic-bezier(.3,.8,.2,1);
+}
+
+/* ---------- Panels ---------- */
+.stage{padding-block:clamp(36px,6vw,72px) clamp(56px,8vw,104px);min-height:560px}
+
+/* About */
+.about{display:grid;gap:40px;grid-template-columns:minmax(0,1fr)}
+.about p.copy{max-width:60ch;font-size:1.1rem;color:var(--ink-2)}
+.about p.copy + p.copy{margin-top:16px}
+.facts{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:6px 26px;box-shadow:var(--shadow);align-self:start}
+.facts div{padding:20px 0;border-bottom:1px solid var(--line)}
+.facts div:last-child{border-bottom:0}
+.facts dt{font:500 .72rem/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin-top:10px;font:600 1.25rem/1.3 var(--font-display);letter-spacing:-.005em}
+
+/* Experience */
+.timeline{list-style:none;padding:0 0 0 40px;position:relative;display:grid;gap:28px;margin-top:8px}
+.timeline::before{
+  content:"";position:absolute;left:11px;top:10px;bottom:10px;width:4px;border-radius:4px;
+  background:repeating-linear-gradient(180deg,var(--accent) 0 14px,var(--amber) 14px 19px);
+  transform-origin:top;animation:grow 1s cubic-bezier(.2,.7,.2,1) both;
+}
+.job{position:relative;min-width:0}
+.node{
+  position:absolute;left:-40px;top:24px;width:26px;height:26px;border-radius:50%;
+  background:var(--bg);border:4px solid var(--accent);
+}
+.job:first-child .node{background:var(--amber);border-color:var(--accent)}
+.job-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:clamp(20px,3.2vw,34px);box-shadow:var(--shadow)}
+.job-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px}
+.meta{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:999px;
+  background:var(--bg-2);color:var(--ink-2);font:500 .78rem/1.2 var(--font-mono);letter-spacing:.02em;
+}
+.meta.live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.points{list-style:none;padding:0;margin-top:22px;display:grid;gap:13px;--base:250ms;--step:55ms}
+.points li{position:relative;padding-left:26px;max-width:72ch;color:var(--ink-2)}
+.points li::before{content:"";position:absolute;left:0;top:.78em;width:11px;height:3px;border-radius:2px;background:var(--accent)}
+
+/* Skills */
+.skills{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));margin-top:8px}
+.skill{
+  display:flex;flex-direction:column;gap:52px;min-height:210px;padding:26px;
+  background:var(--surface);border:1px solid var(--line);border-radius:20px;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .35s;
+}
+.skill:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--c) 55%,var(--line));box-shadow:var(--shadow)}
+.glyph{display:grid;place-items:center;width:54px;height:54px;border-radius:15px;color:var(--c);background:color-mix(in srgb,var(--c) 14%,var(--surface))}
+.glyph svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.skill .h3{margin-top:auto;font-size:1.3rem}
+
+/* Education */
+.edu{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));margin-top:8px}
+.edu-card{display:flex;flex-direction:column;gap:14px;padding:clamp(22px,3vw,32px);background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}
+.edu-top{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:30px}
+.edu-card .school{color:var(--muted);font-size:1.05rem}
+.year{font:500 .8rem/1 var(--font-mono);letter-spacing:.08em;padding:7px 12px;border-radius:999px;background:var(--bg-2);color:var(--amber-ink)}
+
+/* Contact */
+.contact{display:grid;gap:40px;grid-template-columns:minmax(0,1fr)}
+.crow{display:grid;gap:6px 16px;grid-template-columns:minmax(0,1fr) auto;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}
+.crow:first-of-type{border-top:1px solid var(--line)}
+.crow .lbl{grid-column:1 / -1;font:500 .72rem/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.crow .val{font:600 clamp(1.05rem,2.6vw,1.3rem)/1.3 var(--font-display);overflow-wrap:anywhere;min-width:0}
+.crow .val a{color:var(--ink);text-decoration:none;background:linear-gradient(var(--accent),var(--accent)) 0 100%/0 2px no-repeat;transition:background-size .35s ease}
+.crow .val a:hover{background-size:100% 2px}
+.crow .social{justify-self:start;grid-column:1 / -1;display:grid;place-items:center;width:56px;height:56px;border-radius:16px;background:var(--accent);color:var(--on-accent);transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.crow .social svg{width:28px;height:28px;fill:currentColor}
+.crow .social:hover{transform:translateY(-3px);box-shadow:0 12px 24px -10px color-mix(in srgb,var(--accent) 70%,transparent)}
+.copy-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);font:500 .78rem/1 var(--font-mono);color:var(--ink-2);transition:border-color .25s,transform .25s}
+.copy-btn:hover{border-color:var(--accent);transform:translateY(-1px)}
+.copy-btn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+.form{display:grid;gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:clamp(20px,3.2vw,34px);box-shadow:var(--shadow);align-content:start;min-width:0}
+.field{display:grid;gap:8px}
+.field label{font:500 .72rem/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.field input,.field textarea{
+  width:100%;font:400 1rem/1.5 var(--font-body);color:var(--ink);
+  background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:13px 15px;
+  transition:border-color .25s,box-shadow .25s;
+}
+.field textarea{resize:vertical;min-height:130px}
+.field input:focus,.field textarea:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent)}
+.field.bad input,.field.bad textarea{border-color:var(--w-red)}
+.form .btn{justify-self:start}
+.out{min-height:0}
+.out .note{font-size:.95rem;color:var(--ink-2)}
+.out .note.err{color:var(--w-red)}
+.ready{display:grid;gap:14px;padding:18px;border-radius:14px;background:var(--bg-2);animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
+.ready strong{font:700 1.05rem/1.3 var(--font-display)}
+.ready .acts{display:flex;flex-wrap:wrap;gap:10px}
+.ready .addr{font:400 .85rem/1.4 var(--font-mono);color:var(--muted);overflow-wrap:anywhere}
+
+/* Footer */
+.foot{border-top:1px solid var(--line);padding-block:30px}
+.foot p{font:400 .78rem/1.5 var(--font-mono);letter-spacing:.06em;color:var(--muted)}
+
+/* ---------- Harness parts (hero) ---------- */
+.harness .late{animation:fade .6s ease both;animation-delay:1.5s}
+.harness .bpanel{fill:var(--line);stroke:var(--muted);stroke-width:1.2}
+.harness .term{fill:var(--metal);stroke:var(--ink);stroke-width:1.2}
+.harness .ink{fill:var(--ink)}
+.harness .tie{fill:var(--stripe-a);stroke:var(--ink);stroke-width:1.2}
+.harness [data-part]{transition:opacity .3s ease,filter .3s ease}
+.harness[data-hl] [data-part]{opacity:.16}
+.harness [data-part].lit{opacity:1;filter:drop-shadow(0 0 6px var(--amber))}
+.fig-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
+.schematic .fig-row figcaption{margin:0}
+.btn.sm{padding:9px 14px;font-size:.88rem;border-radius:10px}
+.parts{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--bg);font:500 .72rem/1 var(--font-mono);letter-spacing:.04em;color:var(--ink-2);transition:border-color .25s,background-color .25s,transform .25s}
+.chip:hover{transform:translateY(-1px)}
+.chip.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,var(--bg));color:var(--ink)}
+
+/* ---------- Circuit Lab (game) ---------- */
+@keyframes shake{20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}
+@keyframes wave{0%,100%{opacity:.15}50%{opacity:1}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes flow2{to{stroke-dashoffset:-.25}}
+.play-head .copy{max-width:56ch;font-size:1.08rem;color:var(--ink-2)}
+.game{margin-top:26px;max-width:880px;background:var(--surface);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:clamp(18px,3.2vw,34px)}
+.g-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px}
+.g-round,.g-scorebox{font:500 .76rem/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.g-scorebox b{margin-left:6px;font-size:1rem;font-weight:500;color:var(--ink)}
+.g-dots{display:flex;gap:6px}
+.g-dots i{width:22px;height:6px;border-radius:3px;background:var(--line);transition:background-color .4s}
+.g-dots i.now{background:var(--amber)}
+.g-dots i.done{background:var(--accent)}
+.g-q{margin:22px 0 16px;font:700 clamp(1.2rem,2.6vw,1.55rem)/1.3 var(--font-display);letter-spacing:-.01em;text-wrap:balance}
+.g-stage{padding:10px 8px;border-radius:18px;background-color:var(--bg-2);background-image:radial-gradient(var(--grid) 1.2px,transparent 1.4px);background-size:20px 20px}
+.cir{display:block;width:100%;height:auto;max-width:560px;margin-inline:auto}
+.cir .wire0{fill:none;stroke:color-mix(in srgb,var(--muted) 55%,var(--bg-2));stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.cir .live{fill:none;stroke:var(--accent);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}
+.cir .flow{fill:none;stroke:var(--pulse);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:.03 .22;opacity:0;animation:flow2 1.6s linear infinite}
+.g-stage.on .live{stroke-dashoffset:0;transition:stroke-dashoffset 1s cubic-bezier(.4,0,.2,1)}
+.g-stage.on .flow{opacity:.95;transition:opacity .3s ease 1s}
+.cir .slot-box{fill:var(--bg-2);stroke:var(--muted);stroke-width:2;stroke-dasharray:6 6;transition:stroke .3s,fill .3s}
+.cir .slot-q{font:700 28px var(--font-display);fill:var(--muted)}
+.cir .slot-ico{color:var(--accent-ink);fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.cir .slot.bad .slot-box{stroke:var(--w-red)}
+.cir .slot.bad .slot-ico{color:var(--w-red)}
+.cir .slot.ok .slot-box{stroke:var(--accent);stroke-dasharray:none;fill:color-mix(in srgb,var(--accent) 14%,var(--surface))}
+.cir .slot.shake{animation:shake .45s ease}
+.cir .bat{fill:var(--surface);stroke:var(--ink);stroke-width:2.5}
+.cir .bat-t{font:600 15px var(--font-mono);fill:var(--ink)}
+.cir .ld-body{fill:var(--surface);stroke:var(--ink);stroke-width:2.5;stroke-linejoin:round;transition:fill .4s ease .6s}
+.cir .ld-x,.cir .spokes path{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-linecap:round}
+.cir .horn-w path{fill:none;stroke:var(--amber);stroke-width:3;stroke-linecap:round;opacity:0}
+.cir .hub{fill:var(--ink)}
+.cir .ld-name{font:500 13px var(--font-mono);letter-spacing:.12em;fill:var(--muted)}
+.cir .spokes{transform-origin:470px 120px}
+.g-stage.on .ld-body{fill:var(--amber)}
+.g-stage.on #ld-lamp,.g-stage.on #ld-horn{filter:drop-shadow(0 0 12px color-mix(in srgb,var(--amber) 85%,transparent))}
+.g-stage.on .horn-w path{animation:wave 1s ease-in-out infinite}
+.g-stage.on .horn-w path:nth-child(2){animation-delay:.25s}
+.g-stage.on .spokes{animation:spin 1.1s linear infinite}
+.tray{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:18px}
+.opt{display:grid;justify-items:center;align-content:center;gap:10px;min-height:104px;padding:14px 10px;border:1px solid var(--line);border-radius:16px;background:var(--bg);color:var(--ink);transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .25s,background-color .25s,opacity .25s}
+.opt:hover:not(:disabled){transform:translateY(-4px);border-color:var(--accent)}
+.opt .ico{width:48px;height:48px;fill:none;stroke:var(--accent-ink);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.opt .wsw{width:88px;height:33px}
+.opt span{font:600 .9rem/1.2 var(--font-body);text-align:center}
+.opt:disabled{cursor:default}
+.opt:disabled:not(.wrong):not(.right){opacity:.55}
+.opt.wrong{opacity:.4;border-color:var(--w-red)}
+.opt.right{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,var(--bg))}
+.fb-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-top:18px;min-height:58px}
+.fb{flex:1 1 300px;min-width:0;color:var(--ink-2)}
+.fb strong{color:var(--accent-ink)}
+.fb.err strong{color:var(--w-red)}
+.g-end{display:grid;justify-items:start;gap:14px;padding-block:8px}
+.end-score{font:700 clamp(3.4rem,11vw,5.6rem)/1 var(--font-display);letter-spacing:-.03em}
+.end-score span{margin-left:8px;font-size:.38em;font-weight:600;color:var(--muted)}
+.g-end .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.g-end .best{font:400 .8rem/1.4 var(--font-mono);letter-spacing:.06em;color:var(--muted)}
+.opt.txt{min-height:72px;padding:12px 14px}
+.opt.txt span{font-size:.95rem;line-height:1.35}
+.cir .dg-g{fill:var(--surface);stroke:var(--ink);stroke-width:2.5;stroke-linejoin:round}
+.cir .dg-in{fill:var(--surface);stroke:var(--line);stroke-width:1.5}
+.cir .dg-t{font:500 13px var(--font-mono);fill:var(--ink)}
+.cir .dg-gt{font:600 13px var(--font-mono);fill:var(--ink-2)}
+.cir .dg-note{font:400 12px var(--font-mono);fill:var(--muted)}
+.cir .dg-node{fill:var(--ink)}
+.cir .dg-sw{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round}
+@media (min-width:700px){.tray{grid-template-columns:repeat(4,minmax(0,1fr))}.tray.txt{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){.cir .flow{opacity:0!important}}
+
+/* ---------- Wider screens ---------- */
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:56px}
+  .about{grid-template-columns:minmax(0,1.3fr) minmax(0,.8fr);gap:64px}
+  .contact{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px}
+  .tab{padding:20px 22px 19px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  .harness .pulse{opacity:0}
+}
+
+/* ================= Motion layer (GSAP) — added on top of the original design ================= */
+
+/* GSAP takes over the entrance animations; without GSAP the original CSS ones still run */
+html.gsap .rise,
+html.gsap [data-stagger]>*{animation:none}
+
+/* GSAP drives transforms on these, so CSS transform transitions would fight it and cause stutter */
+html.gsap .btn{transition-property:background-color,border-color,box-shadow,color}
+html.gsap .btn:hover,
+html.gsap .skill:hover{transform:none}
+html.gsap .skill{transition-property:border-color,box-shadow}
+
+/* split hero name: each letter slides up from behind a mask */
+.name .line{white-space:nowrap}
+.name .m{display:inline-block;overflow:hidden;vertical-align:top;padding:.05em .03em .16em;margin:-.05em -.03em -.16em}
+.name .c{display:inline-block}
+
+/* scroll progress, drawn like the tab indicator (teal + amber crimp stripes) */
+.rk-progress{
+  position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:3px;z-index:40;pointer-events:none;
+  transform:scaleX(0);transform-origin:0 50%;
+  background:repeating-linear-gradient(90deg,var(--accent) 0 12px,var(--amber) 12px 16px);
+}
+
+#g-score{display:inline-block}
+.schematic figcaption{flex:1 1 220px;min-width:0}
+
+/* real 3D depth for desktop pointers only (phones keep flat, crisp text) */
+@media (hover:hover) and (pointer:fine){
+  .tilt3d{transform-style:preserve-3d}
+}
+</style>
+</head>
+<body>
+
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="p-fuse" viewBox="0 0 64 64"><rect x="14" y="10" width="36" height="30" rx="5"/><path d="M22 40v14M42 40v14"/><path d="M20 26h7l5-8 5 16 5-8h2"/></symbol>
+    <symbol id="p-relay" viewBox="0 0 64 64"><rect x="8" y="12" width="48" height="40" rx="6"/><rect x="14" y="20" width="14" height="10" rx="1"/><path d="M14 44h12M26 44l10-9M36 44h16"/></symbol>
+    <symbol id="p-connector" viewBox="0 0 64 64"><rect x="6" y="20" width="20" height="26" rx="3"/><rect x="38" y="20" width="20" height="26" rx="3"/><path d="M26 29h12M26 37h12"/><path d="M12 20v-6h8v6"/></symbol>
+    <symbol id="p-grommet" viewBox="0 0 64 64"><path d="M4 32h56"/><circle cx="32" cy="32" r="16"/><circle cx="32" cy="32" r="8"/></symbol>
+    <symbol id="p-terminal" viewBox="0 0 64 64"><path d="M4 28h14v8H4z"/><rect x="18" y="24" width="14" height="16" rx="2"/><path d="M23 24v16M27 24v16"/><path d="M32 28h20a4 4 0 0 1 0 8H32"/></symbol>
+    <symbol id="p-clip" viewBox="0 0 64 64"><path d="M14 38a18 18 0 0 1 36 0"/><circle cx="32" cy="36" r="6"/><path d="M8 44h48v8H8z"/><path d="M14 38v6M50 38v6"/></symbol>
+    <symbol id="p-tie" viewBox="0 0 64 64"><rect x="10" y="14" width="44" height="30" rx="15"/><rect x="26" y="40" width="12" height="10" rx="2"/><path d="M32 50v10"/></symbol>
+    <symbol id="p-tube" viewBox="0 0 64 64"><rect x="6" y="20" width="52" height="24" rx="6"/><path d="M16 20v24M24 20v24M32 20v24M40 20v24M48 20v24"/></symbol>
+    <symbol id="w-yb" viewBox="0 0 96 36"><path d="M10 18H86" style="stroke:var(--muted);stroke-width:17;stroke-linecap:round"/><path d="M10 18H86" style="stroke:var(--w-yellow);stroke-width:13;stroke-linecap:round"/><path d="M13 18H83" style="stroke:var(--w-black);stroke-width:3.5;stroke-linecap:round"/></symbol>
+    <symbol id="w-by" viewBox="0 0 96 36"><path d="M10 18H86" style="stroke:var(--muted);stroke-width:17;stroke-linecap:round"/><path d="M10 18H86" style="stroke:var(--w-black);stroke-width:13;stroke-linecap:round"/><path d="M13 18H83" style="stroke:var(--w-yellow);stroke-width:3.5;stroke-linecap:round"/></symbol>
+    <symbol id="w-y" viewBox="0 0 96 36"><path d="M10 18H86" style="stroke:var(--muted);stroke-width:17;stroke-linecap:round"/><path d="M10 18H86" style="stroke:var(--w-yellow);stroke-width:13;stroke-linecap:round"/></symbol>
+    <symbol id="w-gw" viewBox="0 0 96 36"><path d="M10 18H86" style="stroke:var(--muted);stroke-width:17;stroke-linecap:round"/><path d="M10 18H86" style="stroke:var(--w-green);stroke-width:13;stroke-linecap:round"/><path d="M13 18H83" style="stroke:var(--stripe-a);stroke-width:3.5;stroke-linecap:round"/></symbol>
+  </defs>
+</svg>
+<header class="hero" id="hero">
+  <div class="wrap">
+    <div class="topbar">
+      <span class="mark" aria-hidden="true">RK</span>
+      <button class="theme" id="theme" type="button" aria-label="Switch colour theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow kicker rise" style="--i:0"><span class="dot"></span>Design Engineer · Wiring Harness</p>
+        <h1 class="name"><span class="line rise" style="--i:1">Rohit</span><span class="line rise" style="--i:2">Kalgutkar</span></h1>
+        <p class="lede rise" style="--i:3">Helping you find the right person for vehicle harness designing</p>
+        <div class="cta rise" style="--i:4">
+          <a class="btn primary" href="#contact" data-goto="contact">Let’s Connect
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn ghost" href="#experience" data-goto="experience">View experience</a>
+        </div>
+      </div>
+
+      <figure class="schematic rise" style="--i:3">
+        <svg class="harness" id="harness" viewBox="0 0 560 320" role="img" aria-label="Sketch of a wiring harness with connectors, crimped terminals, an inline fuse, a relay, a grommet in a body panel, clips, a cable tie, corrugated tube and tape.">
+          <g data-part="wire">
+            <path class="wire" style="--k:0;stroke:var(--w-red)"    pathLength="1" d="M48 90 C118 90 128 146 196 146 H340 C380 146 392 70 440 70 H512"/>
+            <path class="wire" style="--k:1;stroke:var(--w-green)"  pathLength="1" d="M48 125 C118 125 128 153 196 153 H340 C380 153 392 110 440 110 H512"/>
+            <path class="wire" style="--k:2;stroke:var(--w-blue)"   pathLength="1" d="M48 160 C118 160 128 160 196 160 H340 C380 160 392 210 440 210 H512"/>
+            <path class="wire" style="--k:3;stroke:var(--w-yellow)" pathLength="1" d="M48 195 C118 195 128 167 196 167 H340 C380 167 392 240 440 240 H512"/>
+            <path class="wire" style="--k:4;stroke:var(--w-brown)"  pathLength="1" d="M48 230 C118 230 128 174 196 174 H340 C380 174 392 270 440 270 H512"/>
+          </g>
+          <g data-part="wire">
+            <path class="tracer" style="stroke:var(--stripe-a)" d="M48 125 C118 125 128 153 196 153 H340 C380 153 392 110 440 110 H512"/>
+            <path class="tracer" style="stroke:var(--stripe-b)" d="M48 195 C118 195 128 167 196 167 H340 C380 167 392 240 440 240 H512"/>
+          </g>
+          <g data-part="wire">
+            <path class="pulse" style="--k:0" pathLength="1" d="M48 90 C118 90 128 146 196 146 H340 C380 146 392 70 440 70 H512"/>
+            <path class="pulse" style="--k:1" pathLength="1" d="M48 125 C118 125 128 153 196 153 H340 C380 153 392 110 440 110 H512"/>
+            <path class="pulse" style="--k:2" pathLength="1" d="M48 160 C118 160 128 160 196 160 H340 C380 160 392 210 440 210 H512"/>
+            <path class="pulse" style="--k:3" pathLength="1" d="M48 195 C118 195 128 167 196 167 H340 C380 167 392 240 440 240 H512"/>
+            <path class="pulse" style="--k:4" pathLength="1" d="M48 230 C118 230 128 174 196 174 H340 C380 174 392 270 440 270 H512"/>
+          </g>
+          <g data-part="terminal"><g class="late">
+            <rect class="term" x="60" y="86" width="16" height="8" rx="2"/><rect class="term" x="60" y="121" width="16" height="8" rx="2"/><rect class="term" x="60" y="156" width="16" height="8" rx="2"/><rect class="term" x="60" y="191" width="16" height="8" rx="2"/><rect class="term" x="60" y="226" width="16" height="8" rx="2"/>
+          </g></g>
+          <g data-part="grommet"><g class="late"><rect class="bpanel" x="268" y="96" width="8" height="128" rx="2"/></g></g>
+          <g data-part="tape"><g class="tape">
+            <rect x="196" y="134" width="72" height="52" rx="12" style="fill:var(--tape)"/>
+            <line x1="204" y1="160" x2="262" y2="160" stroke-width="44" stroke-dasharray="2 11" style="stroke:var(--tape-hi)"/>
+          </g></g>
+          <g data-part="tube"><g class="tape">
+            <rect x="276" y="134" width="64" height="52" rx="12" style="fill:var(--tube)"/>
+            <line x1="282" y1="160" x2="334" y2="160" stroke-width="44" stroke-dasharray="4 7" style="stroke:var(--tape-hi)"/>
+          </g></g>
+          <g data-part="clip"><g class="late">
+            <rect class="ink" x="307" y="186" width="10" height="12"/><rect class="ink" x="297" y="198" width="30" height="7" rx="3"/>
+            <rect class="ink" x="235" y="122" width="10" height="12"/><rect class="ink" x="225" y="115" width="30" height="7" rx="3"/>
+          </g></g>
+          <g data-part="tie"><g class="late">
+            <rect class="tie" x="212" y="131" width="7" height="58" rx="2"/><rect class="tie" x="213" y="121" width="5" height="11" rx="1.5"/>
+          </g></g>
+          <g data-part="grommet"><g class="late">
+            <rect x="262" y="130" width="20" height="60" rx="9" style="fill:var(--amber);stroke:var(--ink);stroke-width:1.5"/>
+          </g></g>
+          <g data-part="fuse"><g class="late">
+            <rect x="452" y="60" width="36" height="20" rx="5" style="fill:var(--surface);stroke:var(--ink);stroke-width:2"/>
+            <path d="M458 70 H464 L468 64 L472 76 L476 70 H482" style="fill:none;stroke:var(--w-red);stroke-width:2;stroke-linecap:round;stroke-linejoin:round"/>
+          </g></g>
+          <g data-part="relay"><g class="late">
+            <rect x="446" y="194" width="44" height="32" rx="6" style="fill:var(--bg-2);stroke:var(--ink);stroke-width:2"/>
+            <rect x="452" y="200" width="12" height="9" style="fill:none;stroke:var(--ink);stroke-width:1.6"/>
+            <path d="M452 217 H462 L473 209 M473 217 H484" style="fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/>
+          </g></g>
+          <g data-part="connector">
+            <g class="conn" style="animation-delay:.05s">
+              <rect class="body" x="8" y="62" width="48" height="196" rx="9"/>
+              <rect class="ink" x="22" y="56" width="20" height="6" rx="2"/>
+              <circle class="hole" cx="22" cy="90" r="4.5"/><circle class="hole" cx="22" cy="125" r="4.5"/><circle class="hole" cx="22" cy="160" r="4.5"/><circle class="hole" cx="22" cy="195" r="4.5"/><circle class="hole" cx="22" cy="230" r="4.5"/>
+            </g>
+            <g class="conn" style="animation-delay:.15s">
+              <rect class="body" x="504" y="44" width="48" height="88" rx="9"/>
+              <rect class="ink" x="518" y="38" width="20" height="6" rx="2"/>
+              <circle class="hole" cx="538" cy="70" r="4.5"/><circle class="hole" cx="538" cy="110" r="4.5"/>
+            </g>
+            <g class="conn" style="animation-delay:.25s">
+              <rect class="body" x="504" y="190" width="48" height="104" rx="9"/>
+              <rect class="ink" x="518" y="184" width="20" height="6" rx="2"/>
+              <circle class="hole" cx="538" cy="210" r="4.5"/><circle class="hole" cx="538" cy="240" r="4.5"/><circle class="hole" cx="538" cy="270" r="4.5"/>
+            </g>
+          </g>
+          <text x="32" y="44" text-anchor="middle">A</text>
+          <text x="528" y="28" text-anchor="middle">B</text>
+          <text x="528" y="174" text-anchor="middle">C</text>
+        </svg>
+        <div class="fig-row">
+          <figcaption>Tap a part to find it in the sketch.</figcaption>
+          <a class="btn ghost sm" href="#play" data-goto="play">Play the circuit game</a>
+        </div>
+        <div class="parts" id="parts">
+          <button class="chip" type="button" data-part="wire" aria-pressed="false">Wire</button>
+          <button class="chip" type="button" data-part="connector" aria-pressed="false">Connector</button>
+          <button class="chip" type="button" data-part="terminal" aria-pressed="false">Terminal</button>
+          <button class="chip" type="button" data-part="fuse" aria-pressed="false">Fuse</button>
+          <button class="chip" type="button" data-part="relay" aria-pressed="false">Relay</button>
+          <button class="chip" type="button" data-part="grommet" aria-pressed="false">Grommet</button>
+          <button class="chip" type="button" data-part="clip" aria-pressed="false">Clip</button>
+          <button class="chip" type="button" data-part="tie" aria-pressed="false">Cable tie</button>
+          <button class="chip" type="button" data-part="tube" aria-pressed="false">Corrugated tube</button>
+          <button class="chip" type="button" data-part="tape" aria-pressed="false">Tape</button>
+        </div>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<nav class="tabbar" id="tabbar" aria-label="Sections">
+  <div class="wrap">
+    <div class="scroller" id="scroller">
+      <div class="tablist" id="tablist" role="tablist" aria-label="Portfolio sections">
+        <button class="tab" id="tab-about" role="tab" type="button" aria-selected="true" aria-controls="panel-about">About</button>
+        <button class="tab" id="tab-experience" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="panel-experience">Experience</button>
+        <button class="tab" id="tab-skills" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="panel-skills">Skills</button>
+        <button class="tab" id="tab-education" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="panel-education">Education</button>
+        <button class="tab" id="tab-play" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="panel-play">Play</button>
+        <button class="tab" id="tab-contact" role="tab" type="button" aria-selected="false" tabindex="-1" aria-controls="panel-contact">Contact</button>
+        <span class="ind" id="ind" aria-hidden="true"></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="stage">
+  <div class="wrap">
+
+    <!-- About -->
+    <section class="panel" id="panel-about" role="tabpanel" aria-labelledby="tab-about" tabindex="0">
+      <div class="about">
+        <div>
+          <p class="eyebrow rise" style="--i:0">About Me</p>
+          <h2 class="h2 rise" style="--i:1">A considered approach to harness design</h2>
+          <p class="copy rise" style="--i:2">I’m a Design Engineer at Yazaki India Pvt Ltd. My work involves preparing drawings as preliminary designs.</p>
+          <p class="copy rise" style="--i:3">I’m accountable for the on-time delivery of prototypes and pilot batches while securing customer approvals.</p>
+        </div>
+        <dl class="facts rise" style="--i:3">
+          <div><dt>Location</dt><dd>Bhiwadi, Rajasthan</dd></div>
+          <div><dt>Current role</dt><dd>Design Engineer, Yazaki India</dd></div>
+          <div><dt>Customers</dt><dd>Honda Cars India · Maruti Suzuki</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="panel" id="panel-experience" role="tabpanel" aria-labelledby="tab-experience" tabindex="0" hidden>
+      <p class="eyebrow rise" style="--i:0">Experience</p>
+      <h2 class="h2 rise" style="--i:1">Career timeline</h2>
+      <ol class="timeline" data-stagger style="--step:160ms;--base:150ms">
+        <li class="job">
+          <span class="node" aria-hidden="true"></span>
+          <div class="job-card">
+            <div class="job-head">
+              <h3 class="h3">Yazaki India Pvt Ltd</h3>
+              <span class="meta live">Jr. Design Engineer · Present</span>
+            </div>
+            <ul class="points" data-stagger>
+              <li>Responsible for customers Honda Cars India Limited (HCIL) and Maruti Suzuki India Limited (MSIL), ensuring strong relationships and timely communication.</li>
+              <li>Expertise in Honda standards for designing 2D wiring harnesses and adhering to industry requirements.</li>
+              <li>Prepared Mochikin drawings as preliminary designs.</li>
+              <li>Implemented wiring harness designs effectively using CAE and Cadra software tools.</li>
+              <li>Received specialized training on CAE and Capital XC software from Yazaki teams from Japan and the Philippines.</li>
+              <li>Proposed innovative solutions and alternative components to optimize development timelines and enhance efficiency.</li>
+              <li>Accountable for on-time delivery of prototypes and pilot batches while securing customer approvals.</li>
+              <li>Implemented Marusuko and Engineering Change Notices (ECN) at vendor end, ensuring streamlined operations.</li>
+              <li>Maintained product documentation, drawings, and reference samples as per system protocols.</li>
+              <li>Analysed customer feedback and collaborated with the quality department to identify root causes and resolve issues during new product development.</li>
+              <li>Created manual Bills of Materials (BOM) in Excel and calculated cost estimations using Yazaki’s Global Costing Tool (GCT).</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <span class="node" aria-hidden="true"></span>
+          <div class="job-card">
+            <div class="job-head">
+              <h3 class="h3">Aptiv Components Pvt Ltd</h3>
+              <span class="meta">May 2022 – February 2024</span>
+            </div>
+            <ul class="points" data-stagger>
+              <li>Terminal cross-section and validation: inspected crimped terminals for quality through cross-sectional analysis.</li>
+              <li>Responsible for preventive and breakdown maintenance of applicators.</li>
+              <li>Checked every terminal with 0.22, 0.35 and 0.50 gauge crimp for defects, promptly escalating any defects to the quality team.</li>
+              <li>Proficient in Crimp Lab software.</li>
+              <li>Managed and maintained equipment effectively.</li>
+              <li>Ensured all customer-provided parameters were maintained during production.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Skills -->
+    <section class="panel" id="panel-skills" role="tabpanel" aria-labelledby="tab-skills" tabindex="0" hidden>
+      <p class="eyebrow rise" style="--i:0">Skills</p>
+      <h2 class="h2 rise" style="--i:1">Key strengths</h2>
+      <div class="skills" data-stagger style="--base:150ms;--step:90ms">
+        <article class="skill" style="--c:var(--w-blue)">
+          <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M7 15c3-1 3-7 6-7s2 5 6 4"/></svg></span>
+          <h3 class="h3">2D Design in CAE &amp; Cadra</h3>
+        </article>
+        <article class="skill" style="--c:var(--w-green)">
+          <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M4 15h16M10 4v16"/></svg></span>
+          <h3 class="h3">Excel &amp; Manual BOM Creation</h3>
+        </article>
+        <article class="skill" style="--c:var(--w-red)">
+          <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h11v8H9l-3 3v-3H4z"/><path d="M15 9h5v8h-2v3l-3-3h-5v-2"/></svg></span>
+          <h3 class="h3">Negotiation &amp; Objection Handling</h3>
+        </article>
+        <article class="skill" style="--c:var(--accent)">
+          <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12 20 4l-6 16-3-6z"/><path d="m11 14 9-10"/></svg></span>
+          <h3 class="h3">Cold Outreach</h3>
+        </article>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="panel" id="panel-education" role="tabpanel" aria-labelledby="tab-education" tabindex="0" hidden>
+      <p class="eyebrow rise" style="--i:0">Education</p>
+      <h2 class="h2 rise" style="--i:1">Qualifications</h2>
+      <div class="edu" data-stagger style="--base:150ms;--step:120ms">
+        <article class="edu-card">
+          <div class="edu-top"></div>
+          <h3 class="h3">Diploma in Electrical Engineering</h3>
+          <p class="school">Asian International University</p>
+        </article>
+        <article class="edu-card">
+          <div class="edu-top"><span class="year">2015</span></div>
+          <h3 class="h3">ITI, Electrician Trade</h3>
+          <p class="school">Mallikarjun Industrial Training Institute</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Play -->
+    <section class="panel" id="panel-play" role="tabpanel" aria-labelledby="tab-play" tabindex="0" hidden>
+      <div class="play-head">
+        <p class="eyebrow rise" style="--i:0">Circuit Lab</p>
+        <h2 class="h2 rise" style="--i:1">Complete the circuit</h2>
+        <p class="copy rise" style="--i:2">Pick the harness part that closes the gap and the circuit comes alive. Ten rounds that get harder as you go, from harness parts to logic gates and wire maths. Three points for a first-try answer.</p>
+      </div>
+      <div class="game rise" style="--i:3" id="game">
+        <div id="g-play">
+          <div class="g-top">
+            <span class="g-round" id="g-round">Round 1 of 10</span>
+            <span class="g-dots" id="g-dots" aria-hidden="true"></span>
+            <span class="g-scorebox">Score<b id="g-score">0</b></span>
+          </div>
+          <h3 class="g-q" id="g-q"></h3>
+          <div class="g-stage" id="g-stage">
+            <svg class="cir" id="cir-main" viewBox="0 0 520 240" role="img" aria-label="A simple circuit: a 12 volt battery, a gap that needs a part, and a load that lights or moves when the circuit is complete.">
+              <path class="wire0" d="M60 86 V44 H210"/>
+              <path class="wire0" d="M310 44 H470 V204 H60 V154"/>
+              <path class="live" pathLength="1" d="M60 86 V44 H470 V204 H60 V154"/>
+              <path class="flow" pathLength="1" d="M60 86 V44 H470 V204 H60 V154"/>
+              <g class="slot" id="slot">
+                <rect class="slot-box" x="210" y="20" width="100" height="48" rx="11"/>
+                <text class="slot-q" id="slot-q" x="260" y="53" text-anchor="middle">?</text>
+                <use class="slot-ico" id="slot-ico" href="#p-fuse" x="240" y="24" width="40" height="40" hidden/>
+              </g>
+              <rect class="bat" x="36" y="86" width="48" height="68" rx="9"/>
+              <text class="bat-t" x="60" y="106" text-anchor="middle">+</text>
+              <text class="bat-t" x="60" y="125" text-anchor="middle">12V</text>
+              <text class="bat-t" x="60" y="146" text-anchor="middle">&#8722;</text>
+              <g id="ld-lamp"><circle class="ld-body" cx="470" cy="120" r="28"/><path class="ld-x" d="M450 100 L490 140 M490 100 L450 140"/></g>
+              <g id="ld-horn" hidden><path class="ld-body" d="M452 108 h12 l16 -14 v52 l-16 -14 h-12z"/><g class="horn-w"><path d="M488 108 q9 12 0 24"/><path d="M496 98 q15 22 0 44"/></g></g>
+              <g id="ld-motor" hidden><circle class="ld-body" cx="470" cy="120" r="28"/><g class="spokes"><path d="M470 120 V98 M470 120 L489 131 M470 120 L451 131"/></g><circle class="hub" cx="470" cy="120" r="4"/></g>
+              <text class="ld-name" id="ld-name" x="428" y="125" text-anchor="end">HEADLAMP</text>
+            </svg>
+            <div id="dg" hidden></div>
+          </div>
+          <div class="tray" id="tray" role="group" aria-label="Choose a part"></div>
+          <div class="fb-row">
+            <p class="fb" id="fb" aria-live="polite"></p>
+            <button class="btn primary" id="next" type="button" hidden>Next round</button>
+          </div>
+        </div>
+        <div class="g-end" id="g-end" hidden>
+          <p class="eyebrow">All ten rounds done</p>
+          <p class="end-score"><b id="e-score">0</b><span id="e-max">/ 30</span></p>
+          <h3 class="h3" id="e-rank"></h3>
+          <p class="copy" id="e-msg"></p>
+          <p class="best" id="e-best"></p>
+          <div class="acts">
+            <button class="btn primary" id="again" type="button">Play again</button>
+            <a class="btn ghost" href="#contact" data-goto="contact">Let’s Connect</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="panel" id="panel-contact" role="tabpanel" aria-labelledby="tab-contact" tabindex="0" hidden>
+      <div class="contact">
+        <div>
+          <p class="eyebrow rise" style="--i:0">Contact</p>
+          <h2 class="h2 rise" style="--i:1">Let’s connect</h2>
+          <div data-stagger style="--base:200ms;--step:90ms">
+            <div class="crow">
+              <span class="lbl">LinkedIn</span>
+              <a class="social" href="https://www.linkedin.com/in/rohit-kalgutkar-886405240" target="_blank" rel="noopener" aria-label="Open Rohit Kalgutkar's LinkedIn profile">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6.8" cy="6.9" r="1.9"/><rect x="5.2" y="9.8" width="3.2" height="9.2" rx=".6"/><path d="M10.9 9.8h3v1.3c.6-.9 1.6-1.5 3.1-1.5 2.6 0 3.5 1.7 3.5 4.2V19h-3.2v-4.6c0-1.2-.4-2-1.5-2s-1.7.8-1.7 2.1V19h-3.2z"/></svg>
+              </a>
+            </div>
+            <div class="crow">
+              <span class="lbl">Instagram</span>
+              <a class="social" href="https://www.instagram.com/rohit_kalgutkar_?vrfl=MXRiNjY5MnN5bHE3NQ==" target="_blank" rel="noopener" aria-label="Open Rohit Kalgutkar's Instagram profile">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg>
+              </a>
+            </div>
+            <div class="crow">
+              <span class="lbl">Telegram</span>
+              <a class="social" href="https://t.me/Rohit7393" target="_blank" rel="noopener" aria-label="Open Rohit Kalgutkar's Telegram profile">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.4 3.6 2.9 10.7c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5zM8.6 13.2l9.4-5.9c.4-.3.8-.1.5.2l-7.8 7-.3 3.2z"/></svg>
+              </a>
+            </div>
+            <div class="crow">
+              <span class="lbl">GitHub</span>
+              <a class="social" href="https://github.com/Rohitkalgutkar1" target="_blank" rel="noopener" aria-label="Open Rohit Kalgutkar's GitHub profile">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+              </a>
+            </div>
+            <div class="crow">
+              <span class="lbl">Location</span>
+              <span class="val">Bhiwadi, Rajasthan</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap"><p>© Rohit Kalgutkar · Design Engineer</p></div>
+</footer>
+
+<script>
+(function(){
+  var ids=['about','experience','skills','education','play','contact'];
+  var tabs=ids.map(function(id){return document.getElementById('tab-'+id);});
+  var panels=ids.map(function(id){return document.getElementById('panel-'+id);});
+  var tablist=document.getElementById('tablist');
+  var scroller=document.getElementById('scroller');
+  var ind=document.getElementById('ind');
+  var hero=document.getElementById('hero');
+  var root=document.documentElement;
+  var reduce=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var current=0;
+
+  /* stagger indexes */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-stagger]'),function(group){
+    Array.prototype.forEach.call(group.children,function(child,i){child.style.setProperty('--i',i);});
+  });
+
+  /* tabs */
+  function place(smooth){
+    var t=tabs[current];
+    ind.style.width=t.offsetWidth+'px';
+    ind.style.transform='translateX('+t.offsetLeft+'px)';
+    if(scroller.scrollWidth>scroller.clientWidth+1){
+      var target=t.offsetLeft-(scroller.clientWidth-t.offsetWidth)/2;
+      scroller.scrollTo({left:Math.max(0,target),behavior:(smooth&&!reduce)?'smooth':'auto'});
+    }
+  }
+  function select(id,opts){
+    opts=opts||{};
+    var i=ids.indexOf(id);
+    if(i<0){return;}
+    current=i;
+    tabs.forEach(function(t,k){
+      var on=k===i;
+      t.setAttribute('aria-selected',on?'true':'false');
+      t.tabIndex=on?0:-1;
+      panels[k].hidden=!on;
+    });
+    place(!opts.instant);
+    if(opts.focus){tabs[i].focus({preventScroll:true});}
+    var top=hero.offsetHeight;
+    if(opts.scrollTo||window.scrollY>top){
+      window.scrollTo({top:top,behavior:(opts.instant||reduce)?'auto':'smooth'});
+    }
+  }
+  tabs.forEach(function(t,k){t.addEventListener('click',function(){select(ids[k]);});});
+  tablist.addEventListener('keydown',function(e){
+    var n=current;
+    if(e.key==='ArrowRight'){n=(current+1)%ids.length;}
+    else if(e.key==='ArrowLeft'){n=(current+ids.length-1)%ids.length;}
+    else if(e.key==='Home'){n=0;}
+    else if(e.key==='End'){n=ids.length-1;}
+    else{return;}
+    e.preventDefault();
+    select(ids[n],{focus:true});
+  });
+  document.addEventListener('click',function(e){
+    var a=e.target.closest?e.target.closest('[data-goto]'):null;
+    if(a){e.preventDefault();select(a.getAttribute('data-goto'),{scrollTo:true});}
+  });
+  function fromHash(first){
+    var h=(location.hash||'').replace('#','');
+    if(ids.indexOf(h)>-1){select(h,{instant:first,scrollTo:true});}
+  }
+  window.addEventListener('hashchange',function(){fromHash(false);});
+  window.addEventListener('resize',function(){place(false);});
+  if(window.ResizeObserver){new ResizeObserver(function(){place(false);}).observe(tablist);}
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){place(false);});}
+  place(false);
+  fromHash(true);
+
+  /* theme */
+  var themeBtn=document.getElementById('theme');
+  function effective(){
+    var a=root.getAttribute('data-theme');
+    if(a==='dark'||a==='light'){return a;}
+    return (window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
+  }
+  try{
+    var saved=localStorage.getItem('rk-theme');
+    if(saved==='dark'||saved==='light'){root.setAttribute('data-theme',saved);}
+  }catch(err){}
+  themeBtn.addEventListener('click',function(){
+    var next=effective()==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('rk-theme',next);}catch(err){}
+  });
+
+  /* copy helper */
+  function copyText(text,done,fail){
+    function fallback(){
+      try{
+        var ta=document.createElement('textarea');
+        ta.value=text;ta.setAttribute('readonly','');
+        ta.style.cssText='position:fixed;left:-9999px;top:0;opacity:0';
+        document.body.appendChild(ta);ta.select();
+        var ok=document.execCommand('copy');
+        document.body.removeChild(ta);
+        ok?done():fail();
+      }catch(err){fail();}
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done,fallback);
+    }else{fallback();}
+  }
+  function flash(btn,msg){
+    var span=btn.querySelector('span');
+    if(!span){return;}
+    var old=span.getAttribute('data-old')||span.textContent;
+    span.setAttribute('data-old',old);
+    span.textContent=msg;
+    setTimeout(function(){span.textContent=old;},1800);
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'),function(btn){
+    btn.addEventListener('click',function(){
+      copyText(btn.getAttribute('data-copy'),function(){flash(btn,'Copied');},function(){flash(btn,'Select text');});
+    });
+  });
+
+  /* ---------- parts bin: highlight a part in the hero sketch ---------- */
+  (function(){
+    var svg=document.getElementById('harness');
+    var chips=Array.prototype.slice.call(document.querySelectorAll('#parts .chip'));
+    var pinned=null;
+    function setHl(p){
+      if(p){svg.setAttribute('data-hl',p);}else{svg.removeAttribute('data-hl');}
+      Array.prototype.forEach.call(svg.querySelectorAll('[data-part]'),function(g){g.classList.toggle('lit',g.getAttribute('data-part')===p);});
+      chips.forEach(function(c){c.classList.toggle('on',c.getAttribute('data-part')===p);});
+    }
+    chips.forEach(function(c){
+      var p=c.getAttribute('data-part');
+      c.addEventListener('mouseenter',function(){setHl(p);});
+      c.addEventListener('mouseleave',function(){setHl(pinned);});
+      c.addEventListener('focus',function(){setHl(p);});
+      c.addEventListener('blur',function(){setHl(pinned);});
+      c.addEventListener('click',function(){
+        pinned=(pinned===p)?null:p;
+        chips.forEach(function(x){x.setAttribute('aria-pressed',x.getAttribute('data-part')===pinned?'true':'false');});
+        setHl(pinned);
+      });
+    });
+  })();
+
+  /* ---------- Circuit Lab ---------- */
+  (function(){
+    var NS='http://www.w3.org/2000/svg';
+    var NAMES={fuse:'Fuse',relay:'Relay',connector:'Connector',grommet:'Grommet',terminal:'Terminal',clip:'Clip',tie:'Cable tie',tube:'Corrugated tube'};
+    var WDESC={yb:'yellow wire with a black stripe',by:'black wire with a yellow stripe',y:'solid yellow wire',gw:'green wire with a white stripe'};
+    var BAT='<rect class="bat" x="36" y="86" width="48" height="68" rx="9"/>'+
+      '<text class="bat-t" x="60" y="106" text-anchor="middle">+</text>'+
+      '<text class="bat-t" x="60" y="125" text-anchor="middle">12V</text>'+
+      '<text class="bat-t" x="60" y="146" text-anchor="middle">&#8722;</text>';
+    var DIAGRAMS={
+      parallel:
+        '<svg class="cir" viewBox="0 0 520 240" role="img" aria-label="Two door switches wired side by side between a 12 volt battery and a courtesy lamp. Both switches are open because the doors are shut.">'+
+        '<path class="wire0" d="M60 86 V44 H200"/>'+
+        '<path class="wire0" d="M130 44 V100 H200"/>'+
+        '<path class="wire0" d="M260 44 H330 V100 H260"/>'+
+        '<path class="wire0" d="M330 72 H414"/>'+
+        '<path class="wire0" d="M466 72 H490 V204 H60 V154"/>'+
+        '<circle class="dg-node" cx="130" cy="44" r="5"/><circle class="dg-node" cx="330" cy="72" r="5"/>'+
+        '<circle class="dg-node" cx="200" cy="44" r="5"/><circle class="dg-node" cx="260" cy="44" r="5"/>'+
+        '<circle class="dg-node" cx="200" cy="100" r="5"/><circle class="dg-node" cx="260" cy="100" r="5"/>'+
+        '<path class="dg-sw" d="M200 44 L252 24"/><path class="dg-sw" d="M200 100 L252 80"/>'+
+        '<text class="dg-t" x="230" y="14" text-anchor="middle">DRIVER DOOR</text>'+
+        '<text class="dg-t" x="230" y="126" text-anchor="middle">PASSENGER DOOR</text>'+
+        BAT+
+        '<circle class="ld-body" cx="440" cy="72" r="26"/><path class="ld-x" d="M422 54 L458 90 M458 54 L422 90"/>'+
+        '<text class="ld-name" x="440" y="122" text-anchor="middle">COURTESY LAMP</text>'+
+        '<text class="dg-note" x="290" y="228" text-anchor="middle">Doors shut: both switches open</text>'+
+        '</svg>',
+      gates:
+        '<svg class="cir" viewBox="0 0 520 240" role="img" aria-label="Logic diagram. Inputs: hazard 0, turn switch 1, fault 1. An OR gate takes hazard and turn switch. A NOT gate inverts fault. An AND gate combines the two results into output Y, which drives the lamps.">'+
+        '<path class="wire0" d="M112 60 H150 M112 90 H150 M112 180 H150"/>'+
+        '<path class="wire0" d="M215 75 H260 V120 H320"/>'+
+        '<path class="wire0" d="M201 180 H260 V150 H320"/>'+
+        '<path class="wire0" d="M375 135 H436"/>'+
+        '<rect class="dg-in" x="8" y="48" width="104" height="24" rx="6"/><text class="dg-t" x="60" y="64" text-anchor="middle">HAZARD = 0</text>'+
+        '<rect class="dg-in" x="8" y="78" width="104" height="24" rx="6"/><text class="dg-t" x="60" y="94" text-anchor="middle">TURN SW = 1</text>'+
+        '<rect class="dg-in" x="8" y="168" width="104" height="24" rx="6"/><text class="dg-t" x="60" y="184" text-anchor="middle">FAULT = 1</text>'+
+        '<path class="dg-g" d="M150 45 Q185 45 215 75 Q185 105 150 105 Q166 75 150 45 Z"/><text class="dg-gt" x="178" y="79" text-anchor="middle">OR</text>'+
+        '<path class="dg-g" d="M150 165 L190 180 L150 195 Z"/><circle class="dg-g" cx="196" cy="180" r="5"/><text class="dg-gt" x="170" y="214" text-anchor="middle">NOT</text>'+
+        '<path class="dg-g" d="M320 105 H345 A30 30 0 0 1 345 165 H320 Z"/><text class="dg-gt" x="340" y="139" text-anchor="middle">AND</text>'+
+        '<text class="dg-t" x="405" y="124" text-anchor="middle">Y = ?</text>'+
+        '<circle class="ld-body" cx="460" cy="135" r="24"/><path class="ld-x" d="M443 118 L477 152 M477 118 L443 152"/>'+
+        '<text class="ld-name" x="460" y="182" text-anchor="middle">LAMPS</text>'+
+        '</svg>',
+      drop:
+        '<svg class="cir" viewBox="0 0 520 240" role="img" aria-label="A 12 volt battery feeds a 5 amp load through a 4 metre, 0.5 square millimetre copper wire. The return path is through the body.">'+
+        '<path class="wire0" d="M60 86 V44 H470 V92"/>'+
+        '<path class="wire0" d="M470 148 V204 H60 V154"/>'+
+        BAT+
+        '<rect class="ld-body" x="436" y="92" width="68" height="56" rx="10"/><text class="dg-t" x="470" y="125" text-anchor="middle">5 A</text>'+
+        '<text class="dg-t" x="260" y="30" text-anchor="middle">0.5 mm&#178; copper &#183; 4 m</text>'+
+        '<text class="dg-t" x="260" y="128" text-anchor="middle">&#916;V along the wire = ?</text>'+
+        '<text class="dg-note" x="260" y="228" text-anchor="middle">Return path through the body (ground)</text>'+
+        '</svg>',
+      fuse:
+        '<svg class="cir" viewBox="0 0 520 240" role="img" aria-label="A 12 volt battery feeds two 55 watt headlamps through a fuse of unknown rating.">'+
+        '<path class="wire0" d="M60 86 V44 H210"/>'+
+        '<path class="wire0" d="M310 44 H470 V92"/>'+
+        '<path class="wire0" d="M470 148 V204 H60 V154"/>'+
+        BAT+
+        '<rect class="slot-box" x="210" y="20" width="100" height="48" rx="11"/><text class="dg-t" x="260" y="49" text-anchor="middle">FUSE ?</text>'+
+        '<circle class="ld-body" cx="470" cy="120" r="28"/><path class="ld-x" d="M450 100 L490 140 M490 100 L450 140"/>'+
+        '<text class="ld-name" x="428" y="125" text-anchor="end">2 &#215; 55 W</text>'+
+        '<text class="dg-note" x="260" y="228" text-anchor="middle">Supply 12 V</text>'+
+        '</svg>'
+    };
+    var ROUNDS=[
+      {lvl:'Easy',name:'Tail lamp',load:'lamp',kind:'part',answer:'grommet',opts:['grommet','fuse','relay','tie'],
+       q:'The wire passes through a hole in the body panel on its way to the tail lamp. Which part shields it from the sharp edge and keeps water out?',
+       hint:'It is a rubber ring that sits in the hole.',
+       why:'A grommet seals the hole, stops the wire rubbing on the metal edge and keeps water out.'},
+      {lvl:'Easy',name:'Window motor',load:'motor',kind:'part',answer:'connector',opts:['connector','tube','grommet','fuse'],
+       q:'The door harness has to plug into the body harness so the door can come off. Which part joins the two?',
+       hint:'Two housings click together and their pins meet.',
+       why:'Mating connector housings hold the terminals in line, so harness sections can be built separately and plugged together on the line.'},
+      {lvl:'Easy',name:'Fog lamp',load:'lamp',kind:'part',answer:'terminal',opts:['terminal','grommet','clip','fuse'],
+       q:'A stripped wire end gets crimped to a small metal part so it can click into a connector cavity. Which part is it?',
+       hint:'It is the metal piece inside the connector, crimped onto the wire.',
+       why:'The terminal is crimped onto the wire. Crimps are checked by cutting a cross-section, which is what Rohit did on terminals at Aptiv.'},
+      {lvl:'Medium',name:'Headlamp',load:'lamp',kind:'part',answer:'fuse',opts:['clip','fuse','grommet','tie'],
+       q:'The headlamp circuit needs a part that cuts the power if too much current flows. Which part closes the gap?',
+       hint:'Think of the part that is meant to give up first.',
+       why:'A fuse has a thin element that melts when current gets too high. It gives up first, so the wire never overheats.'},
+      {lvl:'Medium',name:'Lamp',load:'lamp',kind:'wire',answer:'yb',opts:['by','yb','y','gw'],
+       q:'The drawing calls for a Y/B wire. The first letter is the base colour and the second is the stripe. Which wire is it?',
+       hint:'Base colour first, stripe second.',
+       why:'Y/B is a yellow wire with a black stripe. Drawings use short codes like this so every wire can be told apart at a glance.'},
+      {lvl:'Medium',name:'Horn',load:'horn',kind:'part',answer:'relay',opts:['fuse','relay','clip','grommet'],
+       q:'The horn draws a heavy current, but the button should only carry a small one. Which part lets the small current switch the big one?',
+       hint:'It is a switch that a small electromagnet closes.',
+       why:'A relay uses a small coil current to close a switch for the heavy load, so the button wiring can stay thin.'},
+      {lvl:'Hard',kind:'text',diagram:'parallel',
+       answer:'OR gate: switches in parallel',
+       opts:['AND gate: switches in series','OR gate: switches in parallel','NOT gate: one switch inverted','AND gate: switches in parallel'],
+       q:'The courtesy lamp must light when the driver door OR the passenger door is open. How are the two door switches wired, and which gate is that?',
+       hint:'The lamp should light if either switch closes, not only when both do.',
+       why:'Either switch alone must complete the path, so the switches sit side by side (parallel). That is an OR function. Switches in series would need both doors open at once, which is AND.'},
+      {lvl:'Hard',kind:'text',diagram:'gates',
+       answer:'Y = 0, lamps stay off',
+       opts:['Y = 1, lamps flash','Y = 0, lamps stay off','Y floats, so the output is undefined','Y = 1 and 0 in turn'],
+       q:'Solve the logic: Y = (Hazard OR Turn switch) AND (NOT Fault). With Hazard = 0, Turn switch = 1 and Fault = 1, what is Y?',
+       hint:'Work left to right: the OR gate first, then the NOT on Fault, then the AND.',
+       why:'OR(0, 1) = 1. NOT(1) = 0. AND(1, 0) = 0. An active fault blocks the output, so the lamps stay off.'},
+      {lvl:'Expert',kind:'text',diagram:'drop',fixed:true,
+       answer:'0.7 V',
+       opts:['0.35 V','0.7 V','1.4 V','2.8 V'],
+       q:'A 0.5 mm² copper wire, 4 m long, carries 5 A to a load. The return goes through the body. Copper resistivity is 0.0175 Ω·mm²/m. What is the voltage drop along the wire?',
+       hint:'Find the resistance first with R = ρ × L ÷ A, then use V = I × R.',
+       why:'R = 0.0175 × 4 ÷ 0.5 = 0.14 Ω. V = 5 × 0.14 = 0.7 V. Only the 4 m feed counts, because the return runs through the body. Doubling the length would give 1.4 V.'},
+      {lvl:'Expert',kind:'text',diagram:'fuse',fixed:true,
+       answer:'15 A',
+       opts:['7.5 A','10 A','15 A','20 A'],
+       q:'Two 55 W headlamps run from 12 V. A fuse should carry no more than 80% of its rating continuously. Standard sizes are 7.5, 10, 15, 20 and 25 A. Which is the smallest fuse that fits?',
+       hint:'Get the current from P ÷ V, then divide by 0.8 and round up to a standard size.',
+       why:'Current = 110 W ÷ 12 V = 9.2 A. Rating needed = 9.2 ÷ 0.8 = 11.5 A, so the next standard size is 15 A. A 10 A fuse would run at 92% of its rating and nuisance-blow.'}
+    ];
+    function $(id){return document.getElementById(id);}
+    var roundEl=$('g-round'),dotsEl=$('g-dots'),scoreEl=$('g-score'),qEl=$('g-q'),stage=$('g-stage'),
+        cirMain=$('cir-main'),dg=$('dg'),
+        slot=$('slot'),slotQ=$('slot-q'),slotIco=$('slot-ico'),ldName=$('ld-name'),tray=$('tray'),
+        fb=$('fb'),next=$('next'),playBox=$('g-play'),endBox=$('g-end');
+    var idx=0,score=0,tries=0,locked=false,timer=null;
+
+    function shuffle(a){
+      for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}
+      return a;
+    }
+    function buildDots(){
+      dotsEl.textContent='';
+      ROUNDS.forEach(function(){dotsEl.appendChild(document.createElement('i'));});
+    }
+    function paintDots(){
+      Array.prototype.forEach.call(dotsEl.children,function(d,i){
+        d.className=(i<idx||(i===idx&&locked))?'done':(i===idx?'now':'');
+      });
+    }
+    function setSlot(key,kind){
+      slotQ.toggleAttribute('hidden',!!key);
+      slotIco.toggleAttribute('hidden',!key);
+      if(!key){return;}
+      slotIco.setAttribute('href',(kind==='wire'?'#w-':'#p-')+key);
+      var box=kind==='wire'?[222,26,76,29]:[240,24,40,40];
+      slotIco.setAttribute('x',box[0]);slotIco.setAttribute('y',box[1]);
+      slotIco.setAttribute('width',box[2]);slotIco.setAttribute('height',box[3]);
+    }
+    function makeOpt(kind,key,label,aria){
+      var b=document.createElement('button');
+      b.type='button';b.className='opt';b.setAttribute('aria-label',aria);
+      var svg=document.createElementNS(NS,'svg');
+      svg.setAttribute('viewBox',kind==='wire'?'0 0 96 36':'0 0 64 64');
+      svg.setAttribute('class',kind==='wire'?'ico wsw':'ico');
+      svg.setAttribute('aria-hidden','true');
+      var use=document.createElementNS(NS,'use');
+      use.setAttribute('href','#'+(kind==='wire'?'w-':'p-')+key);
+      svg.appendChild(use);b.appendChild(svg);
+      var sp=document.createElement('span');sp.textContent=label;b.appendChild(sp);
+      return b;
+    }
+    function makeTxt(label){
+      var b=document.createElement('button');
+      b.type='button';b.className='opt txt';
+      var sp=document.createElement('span');sp.textContent=label;b.appendChild(sp);
+      return b;
+    }
+    function render(){
+      var r=ROUNDS[idx];
+      var isTxt=r.kind==='text';
+      locked=false;tries=0;clearTimeout(timer);
+      stage.classList.remove('on');
+      cirMain.toggleAttribute('hidden',isTxt);
+      dg.toggleAttribute('hidden',!isTxt);
+      if(isTxt){
+        dg.innerHTML=DIAGRAMS[r.diagram];
+      }else{
+        dg.textContent='';
+        slot.classList.remove('ok','bad','shake');
+        setSlot(null);
+        ['lamp','horn','motor'].forEach(function(k){$('ld-'+k).toggleAttribute('hidden',k!==r.load);});
+        ldName.textContent=r.name.toUpperCase();
+      }
+      qEl.textContent=r.q;
+      roundEl.textContent='Round '+(idx+1)+' of '+ROUNDS.length+' · '+r.lvl;
+      scoreEl.textContent=score;
+      tray.textContent='';
+      tray.classList.toggle('txt',isTxt);
+      tray.setAttribute('aria-label',isTxt?'Choose an answer':'Choose a part');
+      var list=r.fixed?r.opts.slice():shuffle(r.opts.slice());
+      list.forEach(function(key,n){
+        var b;
+        if(isTxt){
+          b=makeTxt(key);
+        }else{
+          var label=r.kind==='wire'?('Wire '+String.fromCharCode(65+n)):NAMES[key];
+          var aria=r.kind==='wire'?(label+', '+WDESC[key]):label;
+          b=makeOpt(r.kind,key,label,aria);
+        }
+        b.addEventListener('click',function(){pick(key,b);});
+        tray.appendChild(b);
+      });
+      fb.className='fb';
+      fb.textContent=isTxt?'Pick the answer you think is right.':(r.kind==='wire'?'Pick a wire to try it in the gap.':'Pick a part to try it in the gap.');
+      next.hidden=true;
+      paintDots();
+    }
+    function say(strong,rest,err){
+      fb.className=err?'fb err':'fb';
+      fb.textContent='';
+      var s=document.createElement('strong');s.textContent=strong;
+      fb.appendChild(s);fb.appendChild(document.createTextNode(rest));
+    }
+    function pick(key,btn){
+      if(locked){return;}
+      var r=ROUNDS[idx];
+      var isTxt=r.kind==='text';
+      tries++;
+      if(!isTxt){setSlot(key,r.kind);}
+      if(key===r.answer){
+        locked=true;
+        var pts=Math.max(1,4-tries);
+        score+=pts;scoreEl.textContent=score;
+        if(!isTxt){
+          slot.classList.remove('bad','shake');slot.classList.add('ok');
+          stage.classList.add('on');
+        }
+        btn.classList.add('right');
+        Array.prototype.forEach.call(tray.children,function(b){b.disabled=true;});
+        say((isTxt?'Correct! +':'Circuit complete! +')+pts+(pts===1?' point. ':' points. '),r.why,false);
+        next.textContent=idx===ROUNDS.length-1?'See my score':'Next round';
+        next.hidden=false;
+        paintDots();
+        next.focus({preventScroll:true});
+      }else{
+        btn.disabled=true;btn.classList.add('wrong');
+        say('Not that one. ','Hint: '+r.hint,true);
+        if(!isTxt){
+          slot.classList.remove('ok','shake');
+          void slot.getBoundingClientRect();
+          slot.classList.add('bad','shake');
+          clearTimeout(timer);
+          timer=setTimeout(function(){
+            if(!locked){slot.classList.remove('bad','shake');setSlot(null);}
+          },900);
+        }
+      }
+    }
+    function showEnd(){
+      var max=ROUNDS.length*3;
+      playBox.hidden=true;endBox.hidden=false;
+      $('e-score').textContent=score;
+      $('e-max').textContent='/ '+max;
+      var rank,msg;
+      if(score>=26){rank='Design Engineer';msg='Near perfect. You would fit right in on a harness drawing.';}
+      else if(score>=17){rank='Harness Technician';msg='Solid work. You know your way around a harness board.';}
+      else{rank='Apprentice';msg='Good start. One more run and the parts, gates and sums will stick.';}
+      $('e-rank').textContent=rank;$('e-msg').textContent=msg;
+      var best=null;
+      try{
+        best=parseInt(localStorage.getItem('rk-best10')||'0',10)||0;
+        if(score>best){best=score;localStorage.setItem('rk-best10',String(best));}
+      }catch(err){best=null;}
+      $('e-best').textContent=best===null?'':('Best on this device: '+best+' / '+max);
+    }
+    next.addEventListener('click',function(){
+      idx++;
+      if(idx>=ROUNDS.length){showEnd();}else{render();}
+    });
+    $('again').addEventListener('click',function(){
+      idx=0;score=0;endBox.hidden=true;playBox.hidden=false;render();
+    });
+    buildDots();
+    render();
+  })();
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  'use strict';
+  if(!window.gsap){return;}                 /* CDN blocked: the page behaves exactly like the original */
+  var reduce=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+  if(reduce){return;}
+  var G=gsap;
+  var hasST=!!window.ScrollTrigger;
+  var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var root=document.documentElement;
+  if(hasST){G.registerPlugin(ScrollTrigger);ScrollTrigger.config({ignoreMobileResize:true});}
+  root.classList.add('gsap');
+  G.defaults({overwrite:'auto'});
+
+  function $(s,r){return (r||document).querySelector(s);}
+  function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));}
+
+  /* ---------- split the name into letters ---------- */
+  var h1=$('.name');
+  if(h1){
+    h1.setAttribute('aria-label',$$('.line',h1).map(function(l){return l.textContent;}).join(' '));
+    $$('.line',h1).forEach(function(line){
+      var t=line.textContent;line.textContent='';
+      Array.prototype.forEach.call(t,function(ch){
+        var m=document.createElement('span');m.className='m';m.setAttribute('aria-hidden','true');
+        var c=document.createElement('span');c.className='c';c.textContent=ch;
+        m.appendChild(c);line.appendChild(m);
+      });
+    });
+  }
+
+  /* ---------- hero intro ---------- */
+  var scrollDone=false;
+  function setupScroll(){
+    if(scrollDone||!hasST){return;}
+    scrollDone=true;
+    G.to('.hero-copy',{y:-46,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:.6}});
+    G.to('.schematic',{y:-70,scale:.965,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:.6}});
+    refreshSoon();
+  }
+  var intro=G.timeline({defaults:{ease:'power4.out'},onComplete:setupScroll});
+  intro
+    .from('.topbar',{y:-24,opacity:0,duration:.7},0)
+    .from('.hero .kicker',{y:16,opacity:0,duration:.7},.08)
+    .from('.name .c',{yPercent:112,rotation:5,duration:1,stagger:.03},.12)
+    .from('.hero .lede',{y:22,opacity:0,duration:.8},.45)
+    .from('.hero .cta > *',{y:22,opacity:0,duration:.7,stagger:.09},.6);
+  setTimeout(setupScroll,2600);
+
+  /* ---------- panel entrances (tabs) ---------- */
+  var about=$('#panel-about');
+  var aboutDone=false;
+  var refreshT;
+  function refreshSoon(){
+    if(!hasST){return;}
+    clearTimeout(refreshT);
+    /* ScrollTrigger.refresh() re-applies the scroll position, which cancels a smooth scroll in progress
+       (that made the first "Let's Connect" tap do nothing), so wait until the page has stopped moving */
+    var last=-1,still=0,tries=0;
+    (function wait(){
+      var y=Math.round(window.scrollY);
+      if(y===last){still++;}else{still=0;last=y;}
+      if(still>=3||++tries>40){ScrollTrigger.refresh();}
+      else{refreshT=setTimeout(wait,60);}
+    })();
+  }
+  function enter(p){
+    if(p===about){aboutDone=true;}
+    var items=$$('.rise,[data-stagger]>*',p);
+    G.killTweensOf(items);
+    G.fromTo(items,
+      {y:34,opacity:0,rotationX:-12,transformPerspective:900,transformOrigin:'50% 0%'},
+      {y:0,opacity:1,rotationX:0,duration:.85,ease:'power3.out',stagger:{amount:.55},clearProps:'opacity,transform'});
+    if(p.id==='panel-experience'){
+      G.fromTo($$('.node',p),{scale:0},{scale:1,duration:.6,ease:'back.out(2.4)',stagger:.2,delay:.25,clearProps:'transform'});
+    }
+    if(p.id==='panel-skills'){
+      G.from($$('.glyph',p),{scale:.4,rotationY:-110,transformPerspective:600,duration:.9,ease:'back.out(1.7)',stagger:.1,delay:.25,clearProps:'transform'});
+    }
+    refreshSoon();
+  }
+  var panelObs=new MutationObserver(function(list){
+    list.forEach(function(m){if(!m.target.hidden){enter(m.target);}});
+  });
+  $$('.panel').forEach(function(p){panelObs.observe(p,{attributes:true,attributeFilter:['hidden']});});
+
+  /* About is visible by default: reveal it when it scrolls into view */
+  if(about){
+    var aboutItems=$$('.rise,[data-stagger]>*',about);
+    if(hasST){
+      G.set(aboutItems,{opacity:0});
+      ScrollTrigger.create({trigger:about,start:'top 88%',once:true,onEnter:function(){if(!aboutDone){enter(about);}}});
+      setTimeout(function(){if(!aboutDone&&about.getBoundingClientRect().top<innerHeight){enter(about);}},3500);
+    }
+  }
+
+  /* ---------- scroll progress bar ---------- */
+  if(hasST){
+    var bar=document.createElement('div');bar.className='rk-progress';bar.setAttribute('aria-hidden','true');
+    document.body.appendChild(bar);
+    G.to(bar,{scaleX:1,ease:'none',scrollTrigger:{start:0,end:'max',scrub:.2}});
+  }
+
+  /* ---------- theme button ---------- */
+  var themeBtn=$('#theme');
+  if(themeBtn){
+    themeBtn.addEventListener('click',function(){
+      G.fromTo($$('svg',themeBtn),{rotation:-100,scale:.4},{rotation:0,scale:1,duration:.6,ease:'back.out(2.2)'});
+    });
+  }
+
+  /* ---------- 3D tilt + depth (desktop mouse only) ---------- */
+  function tilt(el,max,kids,onMove,onLeave){
+    el.classList.add('tilt3d');
+    var rx=G.quickTo(el,'rotationX',{duration:.6,ease:'power3'});
+    var ry=G.quickTo(el,'rotationY',{duration:.6,ease:'power3'});
+    var r=null;
+    function lift(z){kids.forEach(function(k){var t=$$(k[0],el);if(t.length){G.to(t,{z:z?k[1]:0,duration:.45,ease:'power2.out',overwrite:'auto'});}});}
+    el.addEventListener('pointerenter',function(e){
+      if(e.pointerType&&e.pointerType!=='mouse'){return;}
+      r=el.getBoundingClientRect();
+      G.set(el,{transformPerspective:1000});
+      lift(true);
+    });
+    el.addEventListener('pointermove',function(e){
+      if(!r||(e.pointerType&&e.pointerType!=='mouse')){return;}
+      var px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
+      ry(px*max*2);rx(-py*max*2);
+      if(onMove){onMove(px*2,py*2);}
+    });
+    el.addEventListener('pointerleave',function(){
+      r=null;rx(0);ry(0);lift(false);
+      if(onLeave){onLeave();}
+    });
+  }
+  if(fine){
+    /* layers inside the harness sketch drift by different amounts, so the drawing has depth */
+    var layers=[];
+    [['.harness .conn',10],['.harness .late',5],['.harness .tape',3]].forEach(function(def){
+      $$(def[0]).forEach(function(n){
+        layers.push({
+          x:G.quickTo(n,'x',{duration:.9,ease:'power3'}),
+          y:G.quickTo(n,'y',{duration:.9,ease:'power3'}),
+          a:def[1]
+        });
+      });
+    });
+    var sch=$('.schematic');
+    if(sch){
+      tilt(sch,5,[['.harness',26],['.parts',12],['.fig-row',8]],
+        function(nx,ny){layers.forEach(function(l){l.x(nx*l.a);l.y(ny*l.a*.6);});},
+        function(){layers.forEach(function(l){l.x(0);l.y(0);});});
+    }
+    $$('.facts').forEach(function(el){tilt(el,4,[['div',14]]);});
+    $$('.skill').forEach(function(el){tilt(el,9,[['.glyph',40],['.h3',20]]);});
+    $$('.edu-card').forEach(function(el){tilt(el,7,[['.h3',24],['.school',12],['.year',30]]);});
+    $$('.job-card').forEach(function(el){tilt(el,2.2,[['.h3',10],['.meta',18]]);});
+
+    /* magnetic hero buttons */
+    $$('.hero .cta .btn').forEach(function(b){
+      var x=G.quickTo(b,'x',{duration:.5,ease:'power3'}),y=G.quickTo(b,'y',{duration:.5,ease:'power3'});
+      b.addEventListener('pointermove',function(e){
+        var r=b.getBoundingClientRect();
+        x((e.clientX-r.left-r.width/2)*.22);y((e.clientY-r.top-r.height/2)*.3);
+      });
+      b.addEventListener('pointerleave',function(){x(0);y(0);});
+    });
+  }
+
+  /* ---------- parts bin: show what each part does ---------- */
+  var PARTS={
+    wire:'Wire: copper conductor carrying current and signals between components.',
+    connector:'Connector: housing that joins harness branches to components in a locked fit.',
+    terminal:'Terminal: metal contact crimped on a wire end, sitting inside a connector cavity.',
+    fuse:'Fuse: breaks the circuit when current goes above its rating.',
+    relay:'Relay: a small signal switches a high-current load.',
+    grommet:'Grommet: rubber seal where the harness passes through a body panel.',
+    clip:'Clip: fixes the harness to the vehicle body at set intervals.',
+    tie:'Cable tie: bundles wires tightly along the run.',
+    tube:'Corrugated tube: flexible conduit protecting wires from abrasion and heat.',
+    tape:'Tape: wraps wires together, cutting rattle and wear.'
+  };
+  var cap=$('.schematic figcaption');
+  if(cap){
+    var DEF=cap.textContent;
+    var chips=$$('#parts .chip');
+    var setCap=function(txt){
+      if(cap.textContent===txt){return;}
+      G.killTweensOf(cap);
+      G.to(cap,{opacity:0,y:-4,duration:.12,onComplete:function(){
+        cap.textContent=txt;G.to(cap,{opacity:1,y:0,duration:.25});
+      }});
+    };
+    var pinned=function(){
+      var c=chips.filter(function(x){return x.getAttribute('aria-pressed')==='true';})[0];
+      return c?c.getAttribute('data-part'):null;
+    };
+    chips.forEach(function(c){
+      var p=c.getAttribute('data-part');
+      c.addEventListener('mouseenter',function(){setCap(PARTS[p]);});
+      c.addEventListener('focus',function(){setCap(PARTS[p]);});
+      c.addEventListener('mouseleave',function(){var q=pinned();setCap(q?PARTS[q]:DEF);});
+      c.addEventListener('blur',function(){var q=pinned();setCap(q?PARTS[q]:DEF);});
+      c.addEventListener('click',function(){var q=pinned();setCap(q?PARTS[q]:(fine?PARTS[p]:DEF));});
+    });
+  }
+
+  /* ---------- Circuit Lab: extra feedback, game logic untouched ---------- */
+  var scoreEl=$('#g-score');
+  if(scoreEl){
+    var lastScore=scoreEl.textContent;
+    new MutationObserver(function(){
+      if(scoreEl.textContent===lastScore){return;}
+      lastScore=scoreEl.textContent;
+      G.fromTo(scoreEl,{scale:1.7},{scale:1,duration:.6,ease:'back.out(3)',clearProps:'transform'});
+    }).observe(scoreEl,{childList:true,characterData:true,subtree:true});
+  }
+  var gStage=$('#g-stage');
+  if(gStage){
+    var wasOn=false;
+    new MutationObserver(function(){
+      var on=gStage.classList.contains('on');
+      if(on&&!wasOn){
+        G.fromTo('#ld-lamp,#ld-horn,#ld-motor',{scale:.78,svgOrigin:'470 120'},{scale:1,svgOrigin:'470 120',duration:.8,ease:'elastic.out(1,.45)'});
+        G.fromTo('#slot',{scale:.9,svgOrigin:'260 44'},{scale:1,svgOrigin:'260 44',duration:.6,ease:'back.out(3)'});
+      }
+      wasOn=on;
+    }).observe(gStage,{attributes:true,attributeFilter:['class']});
+  }
+  var tray=$('#tray');
+  if(tray){
+    new MutationObserver(function(list){
+      if(!list.some(function(m){return m.addedNodes.length;})){return;}
+      G.from(tray.children,{y:18,opacity:0,duration:.5,stagger:.06,ease:'power3.out',clearProps:'transform,opacity'});
+    }).observe(tray,{childList:true});
+  }
+  var qEl=$('#g-q');
+  if(qEl){
+    new MutationObserver(function(){
+      G.from(qEl,{y:12,opacity:0,duration:.5,ease:'power3.out',clearProps:'transform,opacity'});
+    }).observe(qEl,{childList:true});
+  }
+  var dg=$('#dg');
+  if(dg){
+    new MutationObserver(function(list){
+      if(!list.some(function(m){return m.addedNodes.length;})||dg.hidden){return;}
+      G.from(dg,{opacity:0,y:12,duration:.5,ease:'power3.out',clearProps:'transform,opacity'});
+    }).observe(dg,{childList:true});
+  }
+  var endBox=$('#g-end'),eScore=$('#e-score');
+  if(endBox&&eScore){
+    new MutationObserver(function(){
+      if(endBox.hidden){return;}
+      var target=parseInt(eScore.textContent,10)||0,o={v:0};
+      eScore.textContent='0';
+      G.to(o,{v:target,duration:1.2,ease:'power2.out',onUpdate:function(){eScore.textContent=Math.round(o.v);},onComplete:function(){eScore.textContent=target;}});
+      G.from(endBox.children,{y:22,opacity:0,duration:.6,stagger:.09,ease:'power3.out',clearProps:'transform,opacity'});
+    }).observe(endBox,{attributes:true,attributeFilter:['hidden']});
+  }
+
+  /* fonts change layout: keep scroll triggers in sync */
+  if(hasST){
+    if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){refreshSoon();});}
+    addEventListener('load',function(){refreshSoon();});
+  }
+})();
+</script>
+</body>
+</html>
